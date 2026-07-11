@@ -1,16 +1,154 @@
-# React + Vite
+# 🌸 SyncHer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A holistic wellness companion for women — combining mood tracking, cycle awareness, movement, sleep, hydration, nutrition, and emotional well-being into one beautiful experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Vision
 
-## React Compiler
+Most wellness apps solve only one problem.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+SyncHer brings together emotional health, physical wellness, nutrition, movement, and self-care in a single calming experience designed specifically for women.
 
-## Expanding the ESLint configuration
+Instead of overwhelming users with numbers, SyncHer helps them understand themselves.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🌿 Features
+
+### 🧠 Emotional Wellness
+- Mood Tracker
+- Mood History
+- Daily Reflections
+- AI Wellness Assistant (Coming Soon)
+
+### 💧 Wellness Tracking
+- Water Intake
+- Sleep Tracking
+- Daily Movement
+- Step Counter
+- Habit Streaks
+
+### 🌸 Cycle Wellness
+- Cycle Tracking
+- Phase Insights
+- Symptom Logging
+- Personalized Recommendations
+
+### 🥗 Nourish Hub
+
+A redesigned nutrition experience replacing the traditional nutrition tracker.
+
+Includes:
+
+- 🍽 Meal Planner
+- 🥑 Smart Recipes
+- 📚 Food Library
+- 📊 Health Insights
+- 🧾 Report Analysis (Coming Soon)
+
+### 🧘 Movement
+
+- Guided Yoga
+- Stretching
+- Beginner Workouts
+- Personalized Recommendations
+
+---
+
+## 🎨 Design Philosophy
+
+Inspired by
+
+- MyFitnessPal
+- Finch
+- Calm
+- Headspace
+- Modern Wellness Apps
+- Soft feminine minimalism
+
+Design goals
+
+- Calm
+- Friendly
+- Premium
+- Clean
+- Emotional
+- Beautiful
+
+---
+
+## 🛠 Tech Stack
+
+- React
+- Vite
+- CSS
+- Local Storage
+
+Future
+
+- Firebase
+- Gemini API
+- OCR
+- Charts
+- PWA
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+components/
+pages/
+hooks/
+utils/
+
+docs/
+product-vision.md
+roadmap.md
+ui-guide.md
+```
+
+---
+
+## 🚀 Roadmap
+
+### Phase 1
+
+- Dashboard
+- Mood Tracker
+- Water Tracker
+- Sleep Tracker
+- Movement Tracker
+- Nourish Hub
+
+### Phase 2
+
+- AI Assistant
+- Report Scanner
+- Recipe Engine
+- Smart Recommendations
+
+### Phase 3
+
+- Wearable Integration
+- Community
+- Analytics
+- Notifications
+
+---
+
+## 📸 Screenshots
+
+Coming Soon
+
+---
+
+## 👩‍💻 Developed By
+
+**Suhani Singh**
+
+Building products that combine technology with wellness.
+
+---
