@@ -1,0 +1,279 @@
+.water-tracker {
+  padding: 24px;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.water-tracker h2 {
+  margin: 0 0 24px 0;
+  font-size: 24px;
+  color: #1a5490;
+  font-family: 'Georgia', serif;
+}
+
+.water-tracker h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #1a5490;
+  font-family: 'Georgia', serif;
+}
+
+/* Progress Section */
+.progress-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #b3e5fc;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progress-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a5490;
+}
+
+.goal-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #0277bd;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.goal-btn:hover {
+  background: #0277bd;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(2, 119, 189, 0.3);
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e1f5fe;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0277bd, #01579b);
+  transition: width 0.3s ease;
+  border-radius: 6px;
+}
+
+/* Goal Editor */
+.goal-editor {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #b3e5fc;
+}
+
+.goal-input {
+  width: 80px;
+  padding: 8px;
+  border: 2px solid #0277bd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a5490;
+}
+
+.goal-input:focus {
+  outline: none;
+  border-color: #01579b;
+  box-shadow: 0 0 4px rgba(1, 87, 155, 0.3);
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-btn {
+  background: #0277bd;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #01579b;
+}
+
+.cancel-btn {
+  background: #e0e0e0;
+  color: #424242;
+}
+
+.cancel-btn:hover {
+  background: #bdbdbd;
+}
+
+/* Add Glass Button */
+.add-glass-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #0277bd, #01579b);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.add-glass-btn:hover:not(.goal-reached) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 119, 189, 0.3);
+}
+
+.plus-icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.add-glass-btn.goal-reached {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+}
+
+/* Goal Reached Message */
+.goal-reached-msg {
+  background: #c8e6c9;
+  color: #1b5e20;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Entries Section */
+.entries-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #b3e5fc;
+}
+
+.empty-state {
+  color: #64b5f6;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.entries-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entry-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e3f2fd;
+}
+
+.entry-item:last-child {
+  border-bottom: none;
+}
+
+.entry-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.entry-time {
+  font-weight: 600;
+  color: #0277bd;
+  min-width: 50px;
+}
+
+.entry-amount {
+  color: #1a5490;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background: #ffebee;
+  border: none;
+  color: #c62828;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #ef5350;
+  color: white;
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #b3e5fc;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  background: #f0f7ff;
+  border-radius: 8px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #64b5f6;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0277bd;
+}

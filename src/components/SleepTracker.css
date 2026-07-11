@@ -1,0 +1,338 @@
+.sleep-tracker {
+  padding: 24px;
+  background: linear-gradient(135deg, #f3e5f5 0%, #ede7f6 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.sleep-tracker h2 {
+  margin: 0 0 24px 0;
+  font-size: 24px;
+  color: #4a148c;
+  font-family: 'Georgia', serif;
+}
+
+.sleep-tracker h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #4a148c;
+  font-family: 'Georgia', serif;
+}
+
+/* Sleep Input Section */
+.sleep-input-section {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ce93d8;
+}
+
+.time-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.time-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.time-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6a1b9a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.time-input {
+  padding: 10px;
+  border: 2px solid #e1bee7;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #4a148c;
+  background: #fafafa;
+}
+
+.time-input:focus {
+  outline: none;
+  border-color: #ab47bc;
+  background: white;
+  box-shadow: 0 0 4px rgba(171, 71, 188, 0.3);
+}
+
+/* Hours Display */
+.hours-display {
+  background: #f3e5f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.hours-display p {
+  margin: 0;
+  font-size: 14px;
+  color: #6a1b9a;
+}
+
+.hours-display strong {
+  color: #ab47bc;
+  font-size: 16px;
+}
+
+/* Save Sleep Button */
+.save-sleep-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ab47bc, #7b1fa2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-sleep-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(171, 71, 188, 0.3);
+}
+
+.save-sleep-btn:active {
+  transform: translateY(0);
+}
+
+/* Goal Section */
+.goal-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ce93d8;
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.goal-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6a1b9a;
+}
+
+.goal-btn {
+  background: rgba(171, 71, 188, 0.1);
+  border: 2px solid #ab47bc;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.goal-btn:hover {
+  background: #ab47bc;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(171, 71, 188, 0.3);
+}
+
+/* Goal Editor */
+.goal-editor {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ce93d8;
+}
+
+.goal-input {
+  width: 80px;
+  padding: 8px;
+  border: 2px solid #ab47bc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #4a148c;
+}
+
+.goal-input:focus {
+  outline: none;
+  border-color: #7b1fa2;
+  box-shadow: 0 0 4px rgba(123, 31, 162, 0.3);
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-btn {
+  background: #ab47bc;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #7b1fa2;
+}
+
+.cancel-btn {
+  background: #e0e0e0;
+  color: #424242;
+}
+
+.cancel-btn:hover {
+  background: #bdbdbd;
+}
+
+/* Progress Section */
+.progress-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ce93d8;
+}
+
+.progress-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6a1b9a;
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #f3e5f5;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ab47bc, #7b1fa2);
+  transition: width 0.3s ease;
+  border-radius: 6px;
+}
+
+.status {
+  margin: 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+.status.good {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.status.warning {
+  color: #c62828;
+}
+
+/* Today's Entry */
+.today-entry {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ce93d8;
+  border-left: 4px solid #ab47bc;
+}
+
+.entry-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  background: #f3e5f5;
+  border-radius: 8px;
+}
+
+.detail-label {
+  font-size: 11px;
+  color: #9c27b0;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.detail-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4a148c;
+}
+
+/* Sleep History */
+.sleep-history {
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ce93d8;
+}
+
+.empty-state {
+  color: #b39ddb;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3e5f5;
+  font-size: 13px;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-date {
+  color: #6a1b9a;
+  font-weight: 600;
+}
+
+.history-time {
+  color: #7b1fa2;
+}
+
+.history-duration {
+  background: #f3e5f5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #4a148c;
+  font-weight: 600;
+  text-align: center;
+}

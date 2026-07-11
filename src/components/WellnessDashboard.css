@@ -1,0 +1,454 @@
+.wellness-dashboard {
+  animation: fadeInUp 0.8s ease-out;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === HERO SECTION === */
+.dashboard-hero {
+  margin-bottom: 40px;
+  padding: 50px 32px;
+  background: linear-gradient(135deg, #fdf6f1 0%, #f5ead8 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(212, 181, 160, 0.3);
+  box-shadow: 0 8px 32px rgba(212, 181, 160, 0.12);
+}
+
+.hero-content {
+  text-align: left;
+}
+
+.hero-greeting {
+  font-size: 42px;
+  font-weight: 600;
+  color: #2d1b15;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.hero-date {
+  font-size: 14px;
+  color: #9a8a7e;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* === STATS GRID === */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  position: relative;
+  padding: 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card:hover .card-background {
+  opacity: 1;
+}
+
+/* Mood Card */
+.mood-card {
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8d4be 100%);
+  border: 1px solid rgba(212, 181, 160, 0.4);
+  box-shadow: 0 4px 16px rgba(212, 181, 160, 0.15);
+}
+
+.mood-card.empty {
+  background: linear-gradient(135deg, #f9f4f0 0%, #f0e8dc 100%);
+  opacity: 0.7;
+}
+
+.mood-card .card-background {
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8d4be 100%);
+}
+
+/* Water Card */
+.water-card {
+  background: linear-gradient(135deg, #d6ecf8 0%, #c5e1f5 100%);
+  border: 1px solid rgba(2, 119, 189, 0.2);
+  box-shadow: 0 4px 16px rgba(2, 119, 189, 0.1);
+}
+
+.water-card.empty {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+  opacity: 0.7;
+}
+
+.water-card .card-background {
+  background: linear-gradient(135deg, #d6ecf8 0%, #c5e1f5 100%);
+}
+
+/* Sleep Card */
+.sleep-card {
+  background: linear-gradient(135deg, #e8d9f0 0%, #ddc8e8 100%);
+  border: 1px solid rgba(171, 71, 188, 0.2);
+  box-shadow: 0 4px 16px rgba(171, 71, 188, 0.1);
+}
+
+.sleep-card.empty {
+  background: linear-gradient(135deg, #f3e5f5 0%, #ede7f6 100%);
+  opacity: 0.7;
+}
+
+.sleep-card .card-background {
+  background: linear-gradient(135deg, #e8d9f0 0%, #ddc8e8 100%);
+}
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.card-label {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.card-subtext {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 12px;
+}
+
+.card-time {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.35);
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.mini-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.mini-progress-fill {
+  height: 100%;
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+.water-fill {
+  background: linear-gradient(90deg, #0277bd 0%, #01579b 100%);
+}
+
+.sleep-fill {
+  background: linear-gradient(90deg, #ab47bc 0%, #7b1fa2 100%);
+}
+
+/* === ACHIEVEMENTS === */
+.achievements-section {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.achievement {
+  padding: 14px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.achievement-icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.achievement-text {
+  flex: 1;
+}
+
+.water-achievement {
+  background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 100%);
+  color: #01579b;
+  border: 1px solid rgba(2, 119, 189, 0.2);
+  box-shadow: 0 4px 12px rgba(2, 119, 189, 0.1);
+}
+
+.sleep-achievement {
+  background: linear-gradient(135deg, #ce93d8 0%, #ba68c8 100%);
+  color: #4a148c;
+  border: 1px solid rgba(171, 71, 188, 0.2);
+  box-shadow: 0 4px 12px rgba(171, 71, 188, 0.1);
+}
+
+.full-achievement {
+  background: linear-gradient(135deg, #fff176 0%, #ffee58 100%);
+  color: #f57f17;
+  border: 1px solid rgba(245, 127, 23, 0.2);
+  box-shadow: 0 4px 12px rgba(245, 127, 23, 0.1);
+}
+
+/* === WEEKLY OVERVIEW === */
+.weekly-overview {
+  margin-bottom: 32px;
+  padding: 28px;
+  background: linear-gradient(135deg, #faf6f0 0%, #f3e8db 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(212, 181, 160, 0.2);
+  box-shadow: 0 4px 16px rgba(212, 181, 160, 0.08);
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(212, 181, 160, 0.3);
+}
+
+.overview-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2d1b15;
+  font-weight: 600;
+}
+
+.overview-streak {
+  font-size: 12px;
+  color: #a0827a;
+  font-weight: 500;
+  background: rgba(212, 181, 160, 0.2);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.overview-item {
+  padding: 16px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 181, 160, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.overview-item:hover {
+  border-color: rgba(212, 181, 160, 0.4);
+  box-shadow: 0 4px 12px rgba(212, 181, 160, 0.1);
+  transform: translateY(-2px);
+}
+
+.overview-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.overview-label {
+  font-size: 11px;
+  color: #a0827a;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.overview-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d1b15;
+  margin-bottom: 2px;
+}
+
+.overview-unit {
+  font-size: 11px;
+  color: #c5b5a8;
+}
+
+/* === MOTIVATIONAL === */
+.motivational-section {
+  padding: 24px;
+  background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(233, 30, 99, 0.1);
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.08);
+  text-align: center;
+}
+
+.motivational-text {
+  margin: 0;
+  font-size: 15px;
+  color: #5e35b1;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .dashboard-hero {
+    padding: 32px 20px;
+    margin-bottom: 28px;
+  }
+
+  .hero-greeting {
+    font-size: 32px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    min-height: 160px;
+    padding: 20px;
+  }
+
+  .card-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  .card-value {
+    font-size: 20px;
+  }
+
+  .weekly-overview,
+  .motivational-section {
+    padding: 20px;
+  }
+
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .overview-item {
+    padding: 12px;
+  }
+
+  .overview-icon {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .overview-value {
+    font-size: 18px;
+  }
+
+  .achievement {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-hero {
+    padding: 24px 16px;
+    margin-bottom: 20px;
+  }
+
+  .hero-greeting {
+    font-size: 28px;
+  }
+
+  .stats-grid {
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    min-height: 140px;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
