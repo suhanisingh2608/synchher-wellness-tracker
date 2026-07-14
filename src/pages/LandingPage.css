@@ -1,0 +1,174 @@
+/* ---------------------------------------------------------------------
+   SyncHer Landing Page — Design Tokens & Base Styles
+   Scoped entirely under .syncher-landing so nothing here affects the
+   existing dashboard, trackers, or global App styles.
+--------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap');
+
+.syncher-landing {
+  /* Color palette — per design-system.md, do not alter */
+  --color-sage: #7a9e7e;
+  --color-sage-deep: #5f8163; /* derived hover/deep shade of Sage Green */
+  --color-ivory: #f8f6f2;
+  --color-beige: #e9dfc8;
+  --color-blush: #ddb8c4;
+  --color-olive: #98a878;
+  --color-earth: #4b4037;
+  --color-gray: #ece9e4;
+
+  /* Typography
+     Display: Fraunces, restrained — mid-weight (500/560), used sparingly,
+     so headings read premium and quiet rather than loud or decorative.
+     Body: Manrope — a geometric-humanist sans with a bit more character
+     than a default UI font, but still highly legible at small sizes. */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+
+  font-family: var(--font-body);
+  color: var(--color-earth);
+  background: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.syncher-landing * {
+  box-sizing: border-box;
+}
+
+.syncher-landing img {
+  max-width: 100%;
+  display: block;
+}
+
+.syncher-landing a {
+  color: inherit;
+}
+
+.syncher-landing h1,
+.syncher-landing h2,
+.syncher-landing h3 {
+  margin: 0;
+}
+
+/* Shared section typography utilities, used across multiple sections */
+
+.syncher-landing .section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sage-deep);
+  margin-bottom: 1rem;
+}
+
+.syncher-landing .section-heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  line-height: 1.25;
+  color: var(--color-earth);
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.syncher-landing .section-supporting {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(75, 64, 55, 0.75);
+  margin-top: 1.2rem;
+}
+
+/* ---------------------------------------------------------------------
+   Organic Divider — signature motif shared by multiple sections
+--------------------------------------------------------------------- */
+
+.organic-divider {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  margin-top: -1px;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.organic-divider svg:first-child {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.organic-divider--flip {
+  transform: scaleY(-1);
+}
+
+.organic-divider--ivory path {
+  fill: var(--color-ivory);
+}
+
+.organic-divider--beige path {
+  fill: var(--color-beige);
+}
+
+.organic-divider--sage path {
+  fill: var(--color-sage);
+}
+
+.organic-divider__sprig {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  top: 8px;
+  right: 8%;
+  color: var(--color-olive);
+  opacity: 0.55;
+}
+
+.organic-divider--flip .organic-divider__sprig {
+  transform: scaleY(-1);
+}
+
+@media (max-width: 700px) {
+  .organic-divider {
+    height: 50px;
+  }
+  .organic-divider__sprig {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Scroll reveal — subtle fade-up used by section components via the
+   useRevealOnScroll hook (see OrganicDivider.jsx)
+--------------------------------------------------------------------- */
+
+.syncher-landing .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.syncher-landing .reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect reduced-motion preferences globally within the landing page */
+@media (prefers-reduced-motion: reduce) {
+  .syncher-landing .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .syncher-landing * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

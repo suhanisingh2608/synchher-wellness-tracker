@@ -1,0 +1,47 @@
+.final-cta {
+  position: relative;
+  background: linear-gradient(160deg, var(--color-sage) 0%, var(--color-sage-deep) 100%);
+  padding: 2rem 2rem 6.5rem;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, rgba(248, 246, 242, 0.18), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(221, 184, 196, 0.22), transparent 50%);
+  pointer-events: none;
+}
+
+.final-cta__inner {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 2.5rem;
+}
+
+.final-cta__icon {
+  width: 34px;
+  height: 34px;
+  color: rgba(248, 246, 242, 0.85);
+  margin-bottom: 1.4rem;
+}
+
+.final-cta__headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 500;
+  color: var(--color-ivory);
+  line-height: 1.25;
+  margin: 0 0 1.1rem;
+}
+
+.final-cta__supporting {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  color: rgba(248, 246, 242, 0.9);
+  line-height: 1.7;
+  margin: 0 0 2.2rem;
+}
