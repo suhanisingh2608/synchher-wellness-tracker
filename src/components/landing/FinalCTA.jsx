@@ -1,4 +1,4 @@
-import { IconLeaf } from './LandingIcons';
+import { IconLeaf } from "./LandingIcons";
 import Button from './Button';
 import OrganicDivider, { useRevealOnScroll } from './OrganicDivider';
 import './FinalCTA.css';
@@ -17,7 +17,7 @@ export default function FinalCTA() {
           SyncHer is designed to support — not pressure — you on your
           wellness journey.
         </p>
-        <Button variant="ghost" href="#top" showArrow>
+        <Button variant="ghost" href="#top" showArrow className="syncher-btn--lg">
           Start Your Wellness Journey
         </Button>
       </div>

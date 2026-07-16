@@ -22,13 +22,13 @@
   border-radius: 26px;
   padding: 2.2rem 1.9rem;
   text-align: left;
-  box-shadow: 0 18px 40px -28px rgba(75, 64, 55, 0.32);
+  box-shadow: var(--shadow-card);
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 22px 44px -24px rgba(75, 64, 55, 0.38);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .feature-card__icon {

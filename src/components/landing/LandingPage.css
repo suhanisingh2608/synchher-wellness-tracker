@@ -25,11 +25,18 @@
   --font-display: 'Fraunces', 'Georgia', serif;
   --font-body: 'Manrope', 'Segoe UI', sans-serif;
 
+  /* Shared shadow tokens — keeps card elevation consistent across
+     WhySyncHer, CoreFeatures, DailyWellnessPreview, MeetYourCompanion */
+  --shadow-card: 0 20px 44px -26px rgba(75, 64, 55, 0.34);
+  --shadow-card-hover: 0 26px 52px -24px rgba(75, 64, 55, 0.4);
+  --shadow-card-lg: 0 28px 56px -26px rgba(75, 64, 55, 0.4);
+
   font-family: var(--font-body);
   color: var(--color-earth);
   background: var(--color-ivory);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* safeguard against decorative elements (floating cards, dividers) ever forcing horizontal scroll */
 }
 
 .syncher-landing * {
@@ -43,6 +50,15 @@
 
 .syncher-landing a {
   color: inherit;
+}
+
+/* Visible focus states for keyboard navigation, applied to every
+   interactive element within the landing page */
+.syncher-landing a:focus-visible,
+.syncher-landing button:focus-visible {
+  outline: 2px solid var(--color-sage-deep);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 .syncher-landing h1,
@@ -81,6 +97,25 @@
   line-height: 1.7;
   color: rgba(75, 64, 55, 0.75);
   margin-top: 1.2rem;
+}
+
+/* ---------------------------------------------------------------------
+   Icon sizing consistency — the icon set defaults to 28px, but sits in
+   containers of varying size across sections. These rules keep the
+   rendered icon-to-container ratio consistent everywhere it appears.
+--------------------------------------------------------------------- */
+
+.syncher-landing .why-card__icon svg,
+.syncher-landing .feature-card__icon svg,
+.syncher-landing .companion-mock__avatar svg {
+  width: 24px;
+  height: 24px;
+}
+
+.syncher-landing .preview-card__icon svg,
+.syncher-landing .hero-glass-card__icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 /* ---------------------------------------------------------------------

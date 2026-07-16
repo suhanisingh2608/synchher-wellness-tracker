@@ -1,4 +1,4 @@
-import { IconLeaf } from './LandingIcons';
+import { IconLeaf } from "./LandingIcons";
 import './Footer.css';
 
 export default function Footer() {
@@ -16,10 +16,11 @@ export default function Footer() {
           </p>
         </div>
 
-        <nav className="syncher-footer__links" aria-label="Footer">
-          <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+        <nav className="syncher-footer__links" aria-label="Secondary">
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
           <a href="#contact">Contact</a>
-          <a href="#privacy">Privacy Policy</a>
+          <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
       </div>
 

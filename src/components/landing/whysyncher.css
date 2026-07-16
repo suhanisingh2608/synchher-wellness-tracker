@@ -1,7 +1,7 @@
 .why-syncher {
   position: relative;
   background: var(--color-beige);
-  padding: 2rem 2rem 6.5rem;
+  padding: 1.5rem 2rem 3.5rem;
 }
 
 .why-syncher__inner {
@@ -11,7 +11,7 @@
 }
 
 .why-syncher__grid {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -21,14 +21,14 @@
   background: var(--color-ivory);
   border-radius: 28px;
   padding: 2.6rem 2rem;
-  box-shadow: 0 20px 45px -30px rgba(75, 64, 55, 0.35);
+  box-shadow: var(--shadow-card);
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
   text-align: left;
 }
 
 .why-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 26px 50px -26px rgba(75, 64, 55, 0.4);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .why-card__icon {

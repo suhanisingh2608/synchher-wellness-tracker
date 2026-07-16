@@ -1,7 +1,7 @@
 .how-it-works {
   position: relative;
   background: var(--color-ivory);
-  padding: 2rem 2rem 7rem;
+  padding: 1.5rem 2rem 3.75rem;
 }
 
 .how-it-works__inner {
@@ -11,7 +11,7 @@
 }
 
 .how-it-works__steps {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
