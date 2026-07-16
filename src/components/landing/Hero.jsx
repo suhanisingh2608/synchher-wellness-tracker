@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { IconLeaf, IconMood, IconWater, IconSleep } from './LandingIcons';
+import { IconLeaf, IconMood, IconWater, IconSleep } from "./LandingIcons";
 import Button from './Button';
 import './Hero.css';
 
@@ -93,9 +93,9 @@ export default function Hero() {
 
           <div className="hero__actions">
             <Button variant="primary" href="#final-cta" showArrow>
-              Begin Your Journey
+              Start Your Wellness Journey
             </Button>
-            <Button variant="ghost" href="#daily-preview">
+            <Button variant="secondary" href="#daily-preview">
               Explore Dashboard
             </Button>
           </div>

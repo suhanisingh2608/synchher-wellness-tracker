@@ -1,0 +1,124 @@
+.syncher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.syncher-btn:hover {
+  transform: translateY(-2px);
+}
+
+.syncher-btn:active {
+  transform: translateY(0);
+}
+
+.syncher-btn:focus-visible {
+  outline: 2px solid var(--color-sage-deep);
+  outline-offset: 3px;
+}
+
+.syncher-btn--ghost:focus-visible {
+  outline-color: var(--color-ivory);
+}
+
+/* Compact modifier — for constrained contexts (e.g. the navbar) that
+   need a real Button but can't accommodate full CTA padding without
+   growing the surrounding element's height. */
+.syncher-btn--compact {
+  padding: 0.62rem 1.55rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* Prominent modifier — for the single highest-emphasis CTA on the page */
+.syncher-btn--lg {
+  padding: 1.15rem 2.6rem;
+  font-size: 1.05rem;
+}
+
+.syncher-btn__icon {
+  transition: transform 0.3s ease;
+}
+
+.syncher-btn:hover .syncher-btn__icon {
+  transform: translateX(3px);
+}
+
+/* Primary — filled sage */
+.syncher-btn--primary {
+  background: var(--color-sage);
+  color: var(--color-ivory);
+  box-shadow: 0 8px 24px -8px rgba(122, 158, 126, 0.55);
+}
+
+.syncher-btn--primary:hover {
+  background: var(--color-sage-deep);
+  box-shadow: 0 12px 28px -8px rgba(122, 158, 126, 0.6);
+}
+
+/* Secondary — outlined */
+.syncher-btn--secondary {
+  background: transparent;
+  color: var(--color-earth);
+  border-color: var(--color-earth);
+}
+
+.syncher-btn--secondary:hover {
+  background: var(--color-earth);
+  color: var(--color-ivory);
+}
+
+/* Ghost — transparent, used on photography/dark-ish surfaces */
+.syncher-btn--ghost {
+  background: rgba(248, 246, 242, 0.14);
+  color: var(--color-ivory);
+  border-color: rgba(248, 246, 242, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.syncher-btn--ghost:hover {
+  background: rgba(248, 246, 242, 0.92);
+  color: var(--color-earth);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .syncher-btn,
+  .syncher-btn__icon {
+    transition: none;
+  }
+  .syncher-btn:hover {
+    transform: none;
+  }
+}
+
+/* Responsive — slightly tighter sizing on small screens so buttons
+   don't feel oversized next to mobile-scaled type. */
+@media (max-width: 480px) {
+  .syncher-btn {
+    padding: 0.85rem 1.6rem;
+    font-size: 0.95rem;
+  }
+
+  .syncher-btn--compact {
+    padding: 0.55rem 1.3rem;
+    font-size: 0.88rem;
+  }
+
+  .syncher-btn--lg {
+    padding: 1rem 2.1rem;
+    font-size: 1rem;
+  }
+}
