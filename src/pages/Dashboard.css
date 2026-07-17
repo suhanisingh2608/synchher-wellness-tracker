@@ -1,0 +1,125 @@
+/* ---------------------------------------------------------------------
+   SyncHer Dashboard — Design Tokens & Layout
+   Scoped entirely under .syncher-dashboard so nothing here affects the
+   landing page, existing trackers, or global App styles. This is a
+   deliberate re-declaration of the same palette/type tokens used on the
+   landing page (not a shared import) so the dashboard has zero build
+   dependency on components/landing.
+--------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap');
+
+.syncher-dashboard {
+  /* Color palette — matches design-system.md */
+  --color-sage: #7a9e7e;
+  --color-sage-deep: #5f8163;
+  --color-ivory: #f8f6f2;
+  --color-beige: #e9dfc8;
+  --color-blush: #ddb8c4;
+  --color-olive: #98a878;
+  --color-earth: #4b4037;
+  --color-gray: #ece9e4;
+
+  /* Typography */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+
+  /* Shared shadow tokens — same elevation language as the landing page */
+  --shadow-card: 0 20px 44px -26px rgba(75, 64, 55, 0.34);
+  --shadow-card-hover: 0 26px 52px -24px rgba(75, 64, 55, 0.4);
+  --shadow-card-lg: 0 28px 56px -26px rgba(75, 64, 55, 0.4);
+
+  font-family: var(--font-body);
+  color: var(--color-earth);
+  background: var(--color-beige);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.syncher-dashboard * {
+  box-sizing: border-box;
+}
+
+.syncher-dashboard h1,
+.syncher-dashboard h2,
+.syncher-dashboard h3 {
+  margin: 0;
+}
+
+.syncher-dashboard button {
+  font-family: inherit;
+}
+
+.syncher-dashboard a:focus-visible,
+.syncher-dashboard button:focus-visible {
+  outline: 2px solid var(--color-sage-deep);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Shared section typography, matching the landing page's utility classes
+   (redeclared here rather than imported, per the isolation goal) */
+
+.syncher-dashboard .section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sage-deep);
+}
+
+.syncher-dashboard .section-heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  line-height: 1.3;
+  color: var(--color-earth);
+}
+
+/* --- Page layout --- */
+
+.dash-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin: 2rem 0;
+}
+
+/* Five cards: 3 + 2 reads better than 3 + 1 + 1 or a lopsided last row */
+.dash-cards > *:nth-child(4) {
+  grid-column: span 1;
+}
+
+@media (max-width: 980px) {
+  .dash-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dash-container {
+    padding: 0 1.25rem 4rem;
+  }
+  .dash-cards {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .syncher-dashboard * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

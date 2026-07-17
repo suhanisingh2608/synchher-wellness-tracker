@@ -1,0 +1,162 @@
+.wellness-card {
+  position: relative;
+  background: var(--color-ivory);
+  border: 1px solid rgba(75, 64, 55, 0.06);
+  border-radius: 26px;
+  padding: 1.9rem 1.75rem 1.75rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wellness-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.wellness-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.wellness-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wellness-card:hover .wellness-card__icon {
+  transform: scale(1.06);
+}
+
+.wellness-card__badge {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-sage-deep);
+  background: rgba(122, 158, 126, 0.14);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+.wellness-card__title {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(75, 64, 55, 0.65);
+  margin: 0 0 0.4rem;
+}
+
+.wellness-card__value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-earth);
+  margin: 0 0 1.1rem;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.wellness-card__unit {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(75, 64, 55, 0.5);
+}
+
+.wellness-card__bar-track {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--color-gray);
+  overflow: hidden;
+  margin-bottom: 0.7rem;
+}
+
+.wellness-card__bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--color-sage);
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wellness-card__goal {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(75, 64, 55, 0.5);
+}
+
+/* --- Accent variants — distinct per tracker, all derived from the
+   existing sage/beige/blush/olive/earth palette --- */
+
+.wellness-card--sage .wellness-card__icon {
+  background: rgba(122, 158, 126, 0.16);
+  color: var(--color-sage-deep);
+}
+.wellness-card--sage .wellness-card__bar-fill {
+  background: var(--color-sage);
+}
+
+.wellness-card--blush .wellness-card__icon {
+  background: rgba(221, 184, 196, 0.3);
+  color: #a8607a;
+}
+.wellness-card--blush .wellness-card__bar-fill {
+  background: #c98ea4;
+}
+
+.wellness-card--olive .wellness-card__icon {
+  background: rgba(152, 168, 120, 0.2);
+  color: var(--color-olive);
+}
+.wellness-card--olive .wellness-card__bar-fill {
+  background: var(--color-olive);
+}
+
+.wellness-card--earth .wellness-card__icon {
+  background: rgba(75, 64, 55, 0.09);
+  color: var(--color-earth);
+}
+.wellness-card--earth .wellness-card__bar-fill {
+  background: #8a7563;
+}
+
+.wellness-card--amber .wellness-card__icon {
+  background: rgba(233, 223, 200, 0.7);
+  color: #8a6b3f;
+}
+.wellness-card--amber .wellness-card__bar-fill {
+  background: #c2a15f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wellness-card,
+  .wellness-card__icon,
+  .wellness-card__bar-fill {
+    transition: none;
+  }
+  .wellness-card:hover {
+    transform: none;
+  }
+  .wellness-card:hover .wellness-card__icon {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .wellness-card {
+    padding: 1.6rem 1.4rem 1.4rem;
+    border-radius: 22px;
+  }
+  .wellness-card__value {
+    font-size: 1.75rem;
+  }
+}

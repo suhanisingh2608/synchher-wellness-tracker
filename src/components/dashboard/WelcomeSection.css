@@ -1,0 +1,92 @@
+.dash-welcome {
+  padding: 2.5rem 0 0.5rem;
+}
+
+.dash-welcome__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.dash-welcome__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-earth);
+}
+
+.dash-welcome__logo-icon {
+  color: var(--color-sage);
+  width: 22px;
+  height: 22px;
+}
+
+.dash-welcome__bell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(75, 64, 55, 0.1);
+  background: var(--color-ivory);
+  color: var(--color-earth);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.dash-welcome__bell:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  border-color: rgba(122, 158, 126, 0.3);
+}
+
+.dash-welcome__bell:focus-visible {
+  outline: 2px solid var(--color-sage-deep);
+  outline-offset: 3px;
+}
+
+.dash-welcome__date {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-sage-deep);
+  margin: 0 0 0.6rem;
+}
+
+.dash-welcome__headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  color: var(--color-earth);
+  margin: 0 0 0.6rem;
+  line-height: 1.2;
+}
+
+.dash-welcome__headline em {
+  font-style: italic;
+  color: var(--color-sage-deep);
+}
+
+.dash-welcome__subtext {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  color: rgba(75, 64, 55, 0.68);
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .dash-welcome {
+    padding: 1.75rem 0 0.5rem;
+  }
+  .dash-welcome__topbar {
+    margin-bottom: 2rem;
+  }
+}
