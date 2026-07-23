@@ -1,0 +1,14 @@
+.mood-page {
+  min-height: 100vh;
+  background: #f8f4e8;
+  padding: 3rem 1.5rem;
+}
+
+.mood-container {
+  max-width: 820px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

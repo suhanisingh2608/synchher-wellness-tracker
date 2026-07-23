@@ -1,0 +1,113 @@
+/* Self-contained: design-system hex values are hardcoded here rather
+   than referencing CSS custom properties, matching the approach used
+   in MoodSlider.css, since this component doesn't have visibility into
+   whichever global token stylesheet the rest of the app may define.
+   Sage #7A9E7E / Ivory #F8F6F2 / Earth #4B4037. */
+
+.journal-box {
+  background: #f8f6f2;
+  border: 1px solid rgba(75, 64, 55, 0.08);
+  border-radius: 24px;
+  padding: 1.85rem 2rem;
+  box-shadow: 0 20px 44px -26px rgba(75, 64, 55, 0.34);
+  margin-bottom: 1.5rem;
+  font-family: "Manrope", "Karla", "Segoe UI", sans-serif;
+}
+
+.journal-box__header {
+  margin-bottom: 1.1rem;
+}
+
+.journal-box__title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #4b4037;
+  margin: 0 0 0.35rem;
+}
+
+.journal-box__subtitle {
+  font-family: "Manrope", "Karla", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(75, 64, 55, 0.65);
+  margin: 0;
+}
+
+/* --- Textarea --- */
+
+.journal-box__textarea {
+  width: 100%;
+  min-height: 160px;
+  resize: vertical;
+  background: #ffffff;
+  border: 1.5px solid rgba(75, 64, 55, 0.12);
+  border-radius: 18px;
+  padding: 1rem 1.2rem;
+  font-family: "Manrope", "Karla", "Segoe UI", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #4b4037;
+  box-shadow: 0 1px 3px rgba(75, 64, 55, 0.04) inset;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journal-box__textarea::placeholder {
+  color: rgba(75, 64, 55, 0.4);
+}
+
+.journal-box__textarea:hover {
+  border-color: rgba(75, 64, 55, 0.2);
+}
+
+.journal-box__textarea:focus {
+  outline: none;
+  border-color: #7a9e7e;
+  box-shadow: 0 0 0 4px rgba(122, 158, 126, 0.18);
+}
+
+/* --- Footer / character counter --- */
+
+.journal-box__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.6rem;
+}
+
+.journal-box__counter {
+  font-family: "Manrope", "Karla", "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(75, 64, 55, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-box__textarea {
+    transition: none;
+  }
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 640px) {
+  .journal-box {
+    padding: 1.5rem 1.4rem;
+    border-radius: 20px;
+  }
+  .journal-box__title {
+    font-size: 1.1rem;
+  }
+  .journal-box__subtitle {
+    font-size: 0.9rem;
+  }
+  .journal-box__textarea {
+    min-height: 130px;
+    padding: 0.85rem 1rem;
+    font-size: 0.94rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .journal-box {
+    padding: 2.1rem 2.25rem;
+  }
+}

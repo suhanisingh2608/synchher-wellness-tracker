@@ -1,8 +1,8 @@
-import Dashboard from "./pages/Dashboard";
+import MoodTracker from "./pages/MoodTracker";
 import "./App.css";
 
 function App() {
-  return <Dashboard />;
+  return <MoodTracker />;
 }
 
 export default App;

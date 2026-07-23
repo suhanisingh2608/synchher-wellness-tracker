@@ -1,0 +1,178 @@
+/* Self-contained: design-system hex values are hardcoded here rather
+   than referencing CSS custom properties, since this component doesn't
+   have visibility into whichever global token stylesheet the rest of
+   the app may or may not define. Sage #7A9E7E / Sage-deep #5F8163 /
+   Ivory #F8F6F2 / Beige #E9DFC8 / Earth #4B4037. */
+
+.mood-slider {
+  position: relative;
+  background: rgba(248, 246, 242, 0.65);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 20px 44px -26px rgba(75, 64, 55, 0.34);
+  margin-bottom: 1.5rem;
+  font-family: "Manrope", "Karla", "Segoe UI", sans-serif;
+}
+
+.mood-slider__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.mood-slider__title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: #4b4037;
+  margin: 0;
+}
+
+.mood-slider__value {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #5f8163;
+  min-width: 2.4ch;
+  text-align: right;
+}
+
+/* --- Native range input, fully custom track + thumb --- */
+
+.mood-slider__input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background-color: rgba(75, 64, 55, 0.12);
+  background-repeat: no-repeat;
+  transition: background-image 0.15s ease;
+  cursor: pointer;
+  outline: none;
+  margin: 0.4rem 0;
+}
+
+/* Track (Firefox needs the track itself made transparent so the
+   input's own gradient background — set inline via JS — shows through) */
+.mood-slider__input::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.mood-slider__input::-moz-range-track {
+  height: 8px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.mood-slider__input::-moz-range-progress {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #7a9e7e, #5f8163);
+}
+
+/* Thumb — circular, ivory fill with a sage ring, soft shadow */
+.mood-slider__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: #f8f6f2;
+  border: 2.5px solid #7a9e7e;
+  box-shadow: 0 6px 16px -4px rgba(75, 64, 55, 0.45);
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.mood-slider__input::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f8f6f2;
+  border: 2.5px solid #7a9e7e;
+  box-shadow: 0 6px 16px -4px rgba(75, 64, 55, 0.45);
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.mood-slider__input:hover::-webkit-slider-thumb,
+.mood-slider__input:focus-visible::-webkit-slider-thumb {
+  transform: scale(1.15);
+  border-color: #5f8163;
+  box-shadow: 0 8px 20px -4px rgba(75, 64, 55, 0.5);
+}
+
+.mood-slider__input:hover::-moz-range-thumb,
+.mood-slider__input:focus-visible::-moz-range-thumb {
+  transform: scale(1.15);
+  border-color: #5f8163;
+  box-shadow: 0 8px 20px -4px rgba(75, 64, 55, 0.5);
+}
+
+.mood-slider__input:active::-webkit-slider-thumb {
+  transform: scale(1.05);
+}
+
+.mood-slider__input:active::-moz-range-thumb {
+  transform: scale(1.05);
+}
+
+.mood-slider__input:focus-visible {
+  outline: 2px solid #5f8163;
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+/* --- Labels --- */
+
+.mood-slider__labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+  font-family: "Manrope", "Karla", "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(75, 64, 55, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mood-slider__input,
+  .mood-slider__input::-webkit-slider-thumb,
+  .mood-slider__input::-moz-range-thumb {
+    transition: none;
+  }
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 640px) {
+  .mood-slider {
+    padding: 1.5rem 1.4rem;
+    border-radius: 20px;
+  }
+  .mood-slider__title {
+    font-size: 1.05rem;
+  }
+  .mood-slider__value {
+    font-size: 1.1rem;
+  }
+  .mood-slider__labels {
+    font-size: 0.78rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mood-slider {
+    padding: 2rem 2.25rem;
+  }
+}
